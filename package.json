@@ -1,0 +1,40 @@
+{
+  "name": "food-budgety-app",
+  "version": "0.0.1",
+  "description": "Food recipe project",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Liara42/food-budgety-app.git"
+  },
+  "keywords": [
+    "food",
+    "project"
+  ],
+  "author": "Karolina Gucunski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Liara42/food-budgety-app/issues"
+  },
+  "homepage": "https://github.com/Liara42/food-budgety-app#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "babel-polyfill": "^6.26.0",
+    "fractional": "^1.0.0",
+    "uniqid": "^5.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0",
+    "babel-preset-env": "^1.7.0",
+    "html-webpack-plugin": "^4.3.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
