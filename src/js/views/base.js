@@ -10,22 +10,22 @@ export const elements = {
   likesList: document.querySelector('.likes__list'),
 };
 
-export const elementString = {
+export const elementStrings = {
   loader: 'loader',
 };
 
 export const renderLoader = (parent) => {
   const loader = `
-    <div class="${elementString.loader}">
+    <div class="${elementStrings.loader}">
         <svg>
             <use href="img/icons.svg#icon-cw"></use>
         </svg>
     </div>
     `;
-  parent.insertAdjacentHTML('afterbegin', loader);
+  parent.insertAdjacentHTML('afterBegin', loader);
 };
 
 export const clearLoader = () => {
-  const loader = document.querySelector(`${elementString.loader}`);
+  const loader = document.querySelector(`.${elementStrings.loader}`);
   if (loader) loader.parentElement.removeChild(loader);
 };

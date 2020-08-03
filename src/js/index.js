@@ -88,6 +88,7 @@ const controlRecipe = async () => {
       recipeView.renderRecipe(state.recipe, state.likes.isLiked(id));
     } catch (err) {
       alert('Error processing recipe');
+      console.error(err);
     }
   }
 };
@@ -179,7 +180,7 @@ window.addEventListener('load', () => {
 elements.recipe.addEventListener('click', (e) => {
   if (e.target.matches('.btn-decrease, .btn-decrease *')) {
     //Decrease button is clicked
-    if (state.recipe > 1) {
+    if (state.recipe.servings > 1) {
       state.recipe.updateServings('dec');
       recipeView.updateServingsIngredients(state.recipe);
     }

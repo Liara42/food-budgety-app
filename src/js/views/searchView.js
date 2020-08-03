@@ -18,7 +18,7 @@ export const highlightSelected = (id) => {
   });
 
   document
-    .querySelector(`.results__link[href="#${id}"]`)
+    .querySelector(`.results__link[href*="${id}"]`)
     .classList.add('results__link--active');
 };
 
@@ -29,6 +29,7 @@ export const limitRecipeTitle = (title, limit = 17) => {
       if (acc + cur.length <= limit) {
         newTitle.push(cur);
       }
+      return acc + cur.length;
     }, 0);
     return `${newTitle.join(' ')} ...`;
   }
@@ -38,9 +39,9 @@ export const limitRecipeTitle = (title, limit = 17) => {
 const renderRecipe = (recipe) => {
   const markup = `
     <li>
-        <a class="results__link" href = "#${recipe.recipe_id}" >
+        <a class="results__link" href="#${recipe.recipe_id}">
             <figure class="results__fig">
-                <img src="${recipe.img_url}" alt="${recipe.title}">
+                <img src="${recipe.image_url}" alt="${recipe.title}">
             </figure>
             <div class="results__data">
                 <h4 class="results__name">${limitRecipeTitle(recipe.title)}</h4>
@@ -84,7 +85,7 @@ const renderButtons = (page, numResults, resPerPage) => {
     button = createButton(page, 'prev');
   }
 
-  elements.searchResPages.insertAdjacentHTML('afterbegin', button);
+  elements.searchResPages.insertAdjacentHTML('afterBegin', button);
 };
 
 export const renderResults = (recipes, page = 1, resPerPage = 10) => {
@@ -95,5 +96,5 @@ export const renderResults = (recipes, page = 1, resPerPage = 10) => {
   recipes.slice(start, end).forEach(renderRecipe);
 
   //render pagination numbers
-  renderButtons(page, recipe.length, resPerPage);
+  renderButtons(page, recipes.length, resPerPage);
 };
