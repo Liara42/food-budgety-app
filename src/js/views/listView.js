@@ -2,7 +2,7 @@ import { elements } from './base';
 
 export const renderItem = (item) => {
   const markup = `
-        <li class="shopping__item" data-itemid=${item.id}>
+    <li class="shopping__item" data-itemid=${item.id}>
         <div class="shopping__count">
             <input type="number" value="${item.count}" step="${item.count}" class="shopping__count-value">
             <p>${item.unit}</p>
@@ -21,4 +21,17 @@ export const renderItem = (item) => {
 export const deleteItem = (id) => {
   const item = document.querySelector(`[data-itemid="${id}"]`);
   if (item) item.parentElement.removeChild(item);
+};
+
+export const createButton = () => {
+  const markup = `
+    <button class="btn-small recipe__btn">
+      <svg class="search__icon">
+          <use href="img/icons.svg#icon-shopping-cart"></use>
+      </svg>
+      <span>Delete Shopping List</span>
+    </button>
+`;
+
+  elements.deleteList.innerHTML = markup;
 };

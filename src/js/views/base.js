@@ -8,6 +8,7 @@ export const elements = {
   shopping: document.querySelector('.shopping__list'),
   likesMenu: document.querySelector('.likes__field'),
   likesList: document.querySelector('.likes__list'),
+  deleteList: document.querySelector('.delete__list--button'),
 };
 
 export const elementStrings = {

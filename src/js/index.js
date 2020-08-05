@@ -110,6 +110,7 @@ const controlList = () => {
     const item = state.list.addItem(el.count, el.unit, el.ingredient);
     listView.renderItem(item);
   });
+  listView.createButton();
 };
 
 //Handle delete and update list item events
@@ -174,6 +175,8 @@ window.addEventListener('load', () => {
   //render existing likes and shopping list
   state.likes.likes.forEach((like) => likesView.renderLike(like));
   state.list.list.forEach((list) => listView.renderItem(list));
+
+  // Add delete shopping list button when loading page
 });
 
 //Handling recipe button clicks
